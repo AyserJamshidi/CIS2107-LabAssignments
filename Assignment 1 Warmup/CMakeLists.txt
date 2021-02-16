@@ -3,4 +3,4 @@ project(Assignment-1 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Assignment-1 ArrayPractice.c)
+add_executable(Assignment-1 ArrayPractice.c "../Class Assignments/Test.c")
