@@ -1,8 +1,8 @@
+#include "../include/personal_string.h"
+
 /*
  * Returns the number of characters c in s1 such that b<=c<=t
  */
-#include "../include/personal_string.h"
-
 int num_in_range(char *s1, char b, char t) {
 	int output_num = 0;
 

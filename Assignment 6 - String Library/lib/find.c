@@ -1,8 +1,8 @@
+#include "../include/personal_string.h"
+
 /*
  * Returns the index of the first occurrence of n in the string h or -1 if it isn't found.
  */
-#include "../include/personal_string.h"
-
 int find(char *h, char *n) {
 	int n_length = str_len(n), sequences = 0;
 
@@ -11,7 +11,7 @@ int find(char *h, char *n) {
 
 		for (int j = 0; j < n_length; j++) // Loop through every character in the c string n and start comparing
 			if (n[j] != h[i + j]) { // If we found a part of the sequence that doesn't match,
-				canAdd = 0;
+				canAdd = 0; // Don't add it!
 				break;
 			}
 

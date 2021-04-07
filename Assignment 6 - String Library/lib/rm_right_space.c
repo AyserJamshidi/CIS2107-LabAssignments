@@ -1,8 +1,8 @@
+#include "../include/personal_string.h"
+
 /*
  * Removes whitespace characters from the beginning of s
  */
-#include "../include/personal_string.h"
-
 void rm_right_space(char *s) {
 	int shiftCount = 0, s_length = str_len(s) ; // Contains the amount of left shifts we need to do
 

@@ -120,4 +120,6 @@ unsigned int getByte(unsigned int i, unsigned int j) {
 
 	i = i << mul(leftShiftAmount, 8); // Shift left by leftAmount
 	return i >> mul(add(leftShiftAmount, rightShiftAmount), 8); // Shift right by leftAmount + rightAmount
+
+//	return (i >> mul(8, j)) & 0xFF;
 }

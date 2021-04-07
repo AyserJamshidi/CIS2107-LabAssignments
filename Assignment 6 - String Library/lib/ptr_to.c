@@ -1,8 +1,8 @@
-/*
- *
- */
 #include "../include/personal_string.h"
 
+/*
+ * Returns a pointer to the first occurrence of n in the string h or NULL if it isn't found
+ */
 char *ptr_to(char *h, char *n) {
 	int n_length = str_len(n);
 

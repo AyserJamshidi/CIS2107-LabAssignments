@@ -1,14 +1,14 @@
+#include <stdlib.h>
+#include "../include/personal_string.h"
+
+int euclidean_alg(int a, int b);
+
 /*
  * Returns a new string consisting of all of the letters of s, but padded with spaces at the end so that
  * the total length of the returned string is an even multiple of d. If the length of s is already an even
  * multiple of d, the function returns a copy of s. The function returns NULL on failure or if s is NULL.
  * Otherwise, it returns the new string. It is up to the caller to free any memory allocated by the function.
  */
-#include <stdlib.h>
-#include "../include/personal_string.h"
-
-int euclidean_alg(int a, int b);
-
 char *pad(char *s, int d) {
 	if (s == 0) // s is already
 		return 0;

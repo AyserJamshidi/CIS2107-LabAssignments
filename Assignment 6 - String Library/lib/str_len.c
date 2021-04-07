@@ -1,8 +1,8 @@
+#include "../include/personal_string.h"
+
 /*
  * Returns the number of characters in the string s (up to but not including the '\0' character).
  */
-#include "../include/personal_string.h"
-
 int str_len(char *s) {
 	char *curAddress = s; // Set to first char mem location
 
