@@ -1,7 +1,6 @@
 #include <stdlib.h>
-#include "../include/personal_string.h"
 
-int euclidean_alg(int a, int b);
+#include "../include/personal_string.h"
 
 /*
  * Returns a new string consisting of all of the letters of s, but padded with spaces at the end so that
@@ -10,37 +9,21 @@ int euclidean_alg(int a, int b);
  * Otherwise, it returns the new string. It is up to the caller to free any memory allocated by the function.
  */
 char *pad(char *s, int d) {
-	if (s == 0) // s is already
+	if (s == 0)  // The function returns NULL if s is NULL
 		return 0;
 
 	int s_length = str_len(s);
-	int new_arr_length;
+	int new_arr_length = s_length;
 
-	if (s_length % d == 0) // No padding needed.
-		new_arr_length = s_length;
-	else // Find out how much padding is needed
-		new_arr_length = euclidean_alg(s_length, d);
+	if (s_length % d != 0)  // Padding is needed if length isn't a multiple of d.
+		new_arr_length *= d; // Pad by doing length * d
 
-	if (new_arr_length == 1) // There is no GCD between s_length and d when the GCD is 1.
-		return 0;
-
-	// This is possible, let's do it!
-	char *outputString = malloc(new_arr_length + 1); // Add 1 for null terminator
+	char *output_string = malloc(new_arr_length + 1);  // Add 1 for null terminator
 
 	for (int i = 0; i < new_arr_length; i++)
-		if (i < s_length)
-			outputString[i] = s[i];
-		else
-			outputString[i] = ' ';
+		output_string[i] = (i < s_length) ? s[i] : ' ';
 
-	outputString[new_arr_length] = '\0'; // Add null terminator!
+	output_string[new_arr_length] = '\0';  // Add null terminator!
 
-	return outputString;
-}
-
-int euclidean_alg(int a, int b) {
-	if (b == 0)
-		return a;
-
-	return euclidean_alg(b, a % b);
+	return output_string;
 }

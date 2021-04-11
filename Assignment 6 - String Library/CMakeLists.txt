@@ -10,8 +10,8 @@ add_executable(
 	include/personal_string.h 
 	lib/str_len.c 
 	lib/all_letters.c 
-	lib/num_in_range.c 
-	lib/diff_TODO.c 
+	lib/num_in_range.c
+		lib/diff_TODO.c
 	lib/shorten.c 
 	lib/len_diff.c 
 	lib/rm_left_space.c 
@@ -21,4 +21,11 @@ add_executable(
 	lib/ptr_to.c 
 	lib/is_empty.c 
 	lib/str_zip.c
-        lib/capitalize.c lib/strcmp_ign_case_TODO.c lib/take_last.c lib/dedup.c lib/pad.c)
+    lib/capitalize.c 
+	lib/strcmp_ign_case.c 
+	lib/take_last.c
+        lib/dedup.c
+	lib/pad.c
+	lib/ends_with_ignore_case.c
+	lib/repeat.c
+        lib/rm_empties.c lib/str_chop_all.c lib/str_connect.c)

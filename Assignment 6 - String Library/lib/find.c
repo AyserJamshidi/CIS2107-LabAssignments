@@ -1,23 +1,27 @@
 #include "../include/personal_string.h"
 
 /*
- * Returns the index of the first occurrence of n in the string h or -1 if it isn't found.
+ * Returns the index of the first occurrence of n in the string h
+ * or -1 if it isn't found.
  */
 int find(char *h, char *n) {
-	int n_length = str_len(n), sequences = 0;
+	char *original_h = h; // Store the original pointer of h as we'll be incrementing it later
+	int n_length = str_len(n);
 
-	for (int i = 0; i < str_len(h) - n_length + 1; i++) { // Loop h - n length + 1 as anything past this is impossible to have the sequence
-		int canAdd = 1;
+	while (*h != '\0') { // While h still has chars left
+		int is_same = 1; // Set to true by default as it'll be changed later
 
-		for (int j = 0; j < n_length; j++) // Loop through every character in the c string n and start comparing
-			if (n[j] != h[i + j]) { // If we found a part of the sequence that doesn't match,
-				canAdd = 0; // Don't add it!
+		for (int i = 0; i < n_length; i++) // Loop every char in n
+			if (*(h + i) != *(n + i)) { // If the current h char != current n char
+				is_same = 0; // Set to false and break out of for loop to avoid useless comparisons
 				break;
 			}
 
-		if (canAdd)
-			sequences++;
+		if (is_same) // If isSame turns out to be true
+			return h - original_h; // Return the index
+
+		h++; // increment h as we still need to scan
 	}
 
-	return sequences;
+	return 0; // If we hit a null terminator in h, we never found n in h
 }

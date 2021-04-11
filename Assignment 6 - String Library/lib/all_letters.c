@@ -1,7 +1,9 @@
 #include "../include/personal_string.h"
 
 /*
- * Returns 1 if all of the characters in the string are either upper-case or lower-case letters of the alphabet. It returns 0 otherwise.
+ * Returns 1 if all of the characters in the string are either
+ * upper-case or lower-case letters of the alphabet.
+ * It returns 0 otherwise.
  */
 int all_letters(char *s) {
 	while (*s != '\0') { // While we haven't hit a null terminator
